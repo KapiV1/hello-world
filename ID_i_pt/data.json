@@ -1,0 +1,50 @@
+[
+    {
+        "id": 70306,
+        "name": "kacper",
+        "surname": "vvvvv",
+        "date of birth": "11.12.1654",
+        "grades mathematics": [
+            1,
+            4,
+            1
+        ],
+        "grades polish": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "grades english": [
+            5,
+            5
+        ]
+    },
+    {
+        "id": 976766,
+        "name": "ty",
+        "surname": "mo\u017ce",
+        "date of birth": "911",
+        "grades mathematics": [],
+        "grades polish": [],
+        "grades english": []
+    },
+    {
+        "id": 441802,
+        "name": "w",
+        "surname": "w",
+        "date of birth": null,
+        "grades mathematics": [],
+        "grades polish": [],
+        "grades english": []
+    },
+    {
+        "id": 674628,
+        "name": null,
+        "surname": "jp",
+        "date of birth": "idk",
+        "grades mathematics": [],
+        "grades polish": [],
+        "grades english": []
+    }
+]
