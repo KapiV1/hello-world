@@ -68,4 +68,126 @@ def find_users_by_name(data: list[dict]) -> list[dict]:
     else:
         print('nie ma takiego urzytkownika')
 
+def delete_user_by_id(data: list[dict]) -> bool:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            data.remove(el)
+            print(f'user o nazwie: {str(el["name"])} został usunięty')
+            break
+    else:
+        print('nie ma takiego urzytkownika')
 
+def update_user_name(data: list[dict]) -> bool:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            inp_new_name = input('podaj nową nazwę urzytkownika: ')
+            (el['name']) = inp_new_name
+            print(f'nazwa urzytkownika została zmieniona na {inp_new_name}')
+            break
+    else:
+        print('nie ma takiego urzytkownika')
+
+def update_user_surname(data: list[dict]) -> bool:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            inp_new_surname = input('podaj nowe nazwisko urzytkownika: ')
+            (el['surname']) = inp_new_surname
+            break
+    else:
+        print('nie ma takiego urzytkownika')
+
+def update_user_birth_date(data: list[dict]) -> bool:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            inp_birth_date = input('podaj nowy rocznik urzytkownika: ')
+            if el['name'] == 'twój stary':
+                print('nope')
+            else:
+                el['date of birth'] = inp_birth_date
+                break
+    else:
+        print('nie ma takiego urzytkownika')
+
+def is_name_taken(data: list[dict]) -> bool:
+    inp_user_name = input('podaj imię urzytkownika: ')
+    inp_user_surname = input('podaj nazwisko urzytkownika: ')
+    for el in data:
+        if inp_user_name == str(el['name']) and inp_user_surname == str(el['surname']):
+            print('taki urzykownik już istnieje')
+            break
+    else:
+        print('nieznaleziona takiego urzytkownika')
+
+def show_one_user(data: list[dict]) -> None:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            for x in el:
+                print(el[x])
+                break
+    else:
+        print('nieznaleziona takiego urzytkownika')
+
+def count_all_users(data: list[dict]) -> int:
+    x = 0
+    for el in data:
+        x += 1
+        print(x)
+        break
+    print(x)
+
+def count_users_with_missing_name(data: list[dict]) -> int:
+    x = 0
+    for el in data:
+        if el['name'] == None:
+            x += 1
+            print(x)
+            break
+    print(x)
+
+def average_math_for_user(data: list[dict]) -> float:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            suma = sum(el['grades mathematics'])
+            liczba = len(el['grades mathematics'])
+            if liczba == 0:
+                print('None')
+            else:
+                print(f'średnia = {suma / liczba}')
+                a = suma / liczba
+                return a
+
+def average_polish_for_user(data: list[dict]) -> float:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            suma = sum(el['grades polish'])
+            liczba = len(el['grades polish'])
+            if liczba == 0:
+                print('None')
+            else:
+                print(f'średnia = {suma / liczba}')
+                b = suma / liczba
+                return b
+
+def average_english_for_user(data: list[dict]) -> float:
+    inp_user_id = input('podaj id urzytkownika: ')
+    for el in data:
+        if str(el["id"]) == inp_user_id:
+            suma = sum(el['grades english'])
+            liczba = len(el['grades english'])
+            if liczba == 0:
+                print('None')
+            else:
+                print(f'średnia = {suma / liczba}')
+                c = suma / liczba
+                return c
+
+def overall_average_for_user(data: list[dict]) -> float:
+    d = (average_math_for_user(data) + average_polish_for_user(data) + average_english_for_user(data)) / 3
+    print(d)
